@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+
+	int curr, sumPos, sumNeg, n;
+	curr = 1;
+	sumPos = 0;
+	sumNeg = 0;
+	n = -1; //initialized to -1 to account for the zero that is counted as an input but not 
+	//actually an input
+
+	while(curr != 0){
+		printf("Please enter an integer: ");
+		scanf("%d",&curr);
+		if(curr < 0){
+		sumNeg = sumNeg + curr;
+		}else{
+		sumPos =sumPos + curr;
+		}
+``}
+
+	if(sumPos != 0){
+	printf("Positive average: %f\n", (float)sumPos/n);
+	}
+	if(sumNeg != 0){
+	printf("Negative average: %f\n", (float)sumNeg/n);
+	}
+	return 0;
+}

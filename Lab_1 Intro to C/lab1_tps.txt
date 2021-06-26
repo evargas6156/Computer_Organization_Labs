@@ -1,0 +1,55 @@
+Activity 1
+1. Partners: Vincent, Nick.
+2. The source that I found was from pcworld.com
+3. Answers were shared.
+4. Answers were bookmarked.
+
+
+Activity 2
+1. I can open a terminal by clicking on ubuntu. 
+	a) Yes you can have more than one terminal open at once.
+	b) Two terminals at once are useful for editing code and compiling it at same time.
+2. To check current directory: pwd 
+3. To navigate to my desktop: cd mnt/c/users/Emmanuel Vargas/desktop
+4. To crate new directory: md dir FILENAME
+5. Questions were asked by TA.
+6. Lab_1 director was completed.
+
+
+Activity 3
+1. Source for gcc commands: geeks for geeks: gcc command in linux examples.
+2. Answers were shared and bookmarked. 
+3. To compile main.c: gcc main.c -o run
+4. You know it compiled sccesfully if the executable file is saved in your directory.
+5. The -c flag compiles the program and gives the object file as output, used to make libraries.
+6. The -g flag generates additional debugging information.
+7. To change the executable name to cselab1: gcc main.c -o cselab1
+8. If typing only gcc main.c the executable is made with the default name a.out
+9. To run compiled program: ./cselab1
+10. TA asked questions.
+
+Activity 4
+
+Averages Pseudocode:
+
+sumPos
+sumNeg
+curr
+posNum
+negNum
+
+
+while curr is not zero
+	curr = user number 
+	if its positive add it to sumPos increment posNum
+	else if negative add to sumNeg increment negNum
+	
+
+
+output positive average sumPos/posNum
+output neg average sumNeg/negNum
+
+
+
+
+

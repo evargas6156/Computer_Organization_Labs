@@ -1,0 +1,53 @@
+Activity 1
+1. Vincent Lee Standford
+2. One resource found was from the Ohio State University.
+3. Info was shared with partner. 
+4. Info was bookmarked.
+
+
+Activity 2
+1. Compilation for debugging in GDB: gcc -g punishment.c -o punish
+2. To load in GDB once compiled: gdb punish
+3. To run in GDB: run
+4. Breaks are points where the debugger will stop once executing the program and give the promt 
+to debug. To insert a breakpoint use: break line_number. 
+5. To run a program line by line after the break, type: n to run the next line.
+6. To display value of a variable: print var_name
+7. To finish executing program press: c and it will stop at next breakpoint. 
+8. To exit GDB type: quit 
+
+Activity 3
+1. 4 variables were declared in line 1, 2 of them were pointers.
+2. x, y ,and arr[0] will have garbage in them. This happens because c doesn't automaticaly
+initialize variables to zero, so they contain garbage until initialized. 
+3. To prevent the variables from having unexpected values they should be initialized to 0 once 
+declared.  
+4. Inserted print statements for adresses of x and y.
+5. Printed addresses and values of px and py.
+6. Printed out values of arr using arr as a pointer.
+7. Arr does point to the same address as arr[0].
+8. The address of arr is the same as the address arr points to and the address of arr[0],
+this makes sense because in c the arr name isnt stores separately, so its address stores the first
+element which is arr[0] thus all the address locations match.
+
+
+Assingment 1
+1. Line 15 caused the segmentation fault.
+2. To fix the line the second scanf argument must be an address. 
+
+3. The second bug is that when the function read_values is called its argument is the vlaue of
+sum, not a pointer to sum, thus when sum is saved within the function it is saved to a local 
+varible and lost after the function is done. 
+4. This bug can be fixed by passing a pointer to sum to read_values, then using that pointer to 
+store the value of sum in a variable that can stillbe accessed by main after the function is over.
+
+Assignment 2
+1. The output of:HELLO!hello!llo!for the input HELLO! and hello! is not expected as part of 
+string 2 is partially repeated.
+2. The output for HI! and hi!is not expected but is as follows: HI!hi!hellhi!, here we see part 
+of the output from the first run is repeated as well as part of stirng 2 from the second run.
+The bug here apperas to be that the rest of the array wasn't initialized to be blank.  
+3. When the input is long the two strings get mixed int odd ways, for the input provided this 
+was the output: Hello! HowI am fine, thank you!I am fine, thank you!x, this is likely due to the fact
+that the arrays of char were initialized to 10, and the input is much larger.
+                                                                

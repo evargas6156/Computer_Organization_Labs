@@ -1,0 +1,38 @@
+Activity 1 
+1. In static storage global variables are stored. The stack stores all local
+variables. The heap is where dynamic malloc variables are stored.
+2. a) Three variables are declared.
+   b) Two of them are pointers. ptr points to an int, handle points to an int pointer. 
+   c) num is stored on the stack, ptr and handle are stored on the heap.
+   d) ptr will point to the stack memory pool.
+3. Drawing made on paper and shown to TA.
+4. Drawing made.
+
+Activity 2
+1. The program creates a struct with three members. Two of them being numbers int and float 
+initialized to 5 and 3.14 respectively. The next is a pointer to the next struct node. 
+2. Addresses and values were printed.
+3. The address of the head and the first member variable of the head share the same address,
+each variable after that is 4 memory locations apart from eachother. This means that all members 
+of a struct have their memory saved at the same time and are reserved one after another with the 
+head and first member ariable sharing the same address. 
+
+Assignment 1
+1. a) We need to pass the size of the array to the function because in c there is no built in 
+   function to return the size of the array so it must be passed.
+   b) The original array is unchanged at the end of the sort function. 
+   c) A new array is needed because the way main was coded it wants to have two arrays, the sorted and 
+   unsorted arrays, thus the new sorted array must be returned so that the original array is 
+   preserved.
+
+
+
+
+
+
+
+
+
+
+
+

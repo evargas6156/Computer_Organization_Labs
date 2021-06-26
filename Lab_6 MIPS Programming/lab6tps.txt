@@ -1,0 +1,33 @@
+Activity 1 
+1. The starting address for text segment: 0x00400000
+   The starting address for data segment: 0x10010000
+2. The source code shows the register names such as t or a, whereas the basic one only has them
+   by their number. The source aslso has alot of whitespace for readability, line numbers, and labels.
+   The basic one only has the basic mips operation being performed. 
+3. There is a 32 byte difference.
+4. For each address location there are 8 columns. 
+5. Each column stores a 4 byte number, thus across 8 columns there are 32 bytes, which is the 
+   number of bytes between each address. 
+6. To create a new variable named m and set it to 20 use: m:	.word 20
+7. The value of m is stored at address 0x10010004
+8. Declared a string str1 as follows: str1: .asciiz "I love CSE31!"
+9. The string is stored at address  0x10010008.
+10.The storage of the string is  consistent with how an array of characters 
+   is stored, as each charcter takes up one byte and each memory location has 4 bytes, thus the 
+   13 character string is stored over 4 memory locations.
+11.To print the string:		li	$v0, 4
+				la	$a0, str1
+				syscall
+12. la $t3, n saves the address of n into register $t3. 0x10010000 will be the value stored 
+    in $t3.
+
+
+Activity 2
+1. Storage for operations is limited hence why there isnt one instruction for each inequality.
+2. Declared n and set it to 25.
+3. Declared 4 strings.
+4. Added code to input integer. 
+5. Added code to print "Less than" if less than n
+6. Added code to print if greater than or equal to. 
+7. Added code for greater than.
+8. Added code for less than or equal to.

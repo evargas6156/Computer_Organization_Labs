@@ -1,0 +1,27 @@
+Activity 1
+1. I expect the program to print 2.
+2. I expect the program to print 41414141.
+3. My answer was verified.
+4. The print statement now prints 2 again, I am surprised.
+5. a) Only one array was created. 
+   b) Four_ints and four_c are pointing to the same location. 
+   c) My answer was verified. 
+6. Each element is 4 spaces apart in memory addresses, this means each element of the array has 
+space for 4 bytes or 32 bits. 
+7. Drew array four_ints.
+8. Four c memory addresses are only 1 apart, since this is a character pointer its memory locations
+are only one byte apart for the single character it stores. 
+9. Drew array four_c.
+10. C accesses memory when the index of an array os incremented by adding the corresspodning size 
+of the data type to the pointer to access the next slot of memory. For example for an int c would 
+add 4 to the pointer to access the next integer element of the array.
+
+Activity 2 
+1. Line 8 creates an array of **int pointers that contains 5 elements. 
+2. To access the ith value of the **int array, use *(arr + i)
+3. To access arr[i][j] using pointers: *(*(arr + i) + j).
+4. We need to pass the size to the print function because there is no built in funciton to return 
+size so it must be passed as a parameter.
+5. printArray was completed.
+6. Added code for diagonal matrix.
+7. array was printed and result confirmed. 

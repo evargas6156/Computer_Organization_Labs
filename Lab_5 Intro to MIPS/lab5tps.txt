@@ -1,0 +1,31 @@
+Activity 1
+1. MARS stands for: MIPS Assembler and Runtime Simulator
+2. MARS downloaded and installed.
+3. Downloaded tutorial materials. 
+4. a) To load a file use file->open or the open ion.
+   b) Assemble the program using the assemble icon. looks like wrench and screwdriver. 
+   c) You run the program using the run button, looks like a play button.
+   d) You cannot run a program before assembling.
+   e) To run a program line by line use the single step icon, a play button with a subscripted 1
+   f) To rerun after you must click the reset (skip backwards button) and then hit the run button
+
+Activity 2
+1. .data - The following data items should be stored in the data segment
+   .text - The next items are put in the user text segment
+   .word - Store the n 32 but quantities in succesive memory words
+2. Line 10 branches to the finish label if the value in register $t3 is equal to 0.
+3. Line 15 jumps to the fib label
+4. To set a breakpoint go to the execute tab after assembling and check the breakpoint box
+   on each line a breakpoint is desired. 
+5. To continue to execute your code after the breakpoint click the step button once. To step 
+   through the code start it through the signle step button and click to step another line.
+6. To see the content of a register look at the register tab and find the correspoding register.
+   To manually modify the value of the register double ckick its value and type in the desired 
+   value.
+7. N is stored at address 0x10010000. Changed value to 13 to calculate 13th fib number. 
+8. MIPS syscall is a special instruction used in MIPS instruction set to do a service. It is a 
+   “Software Interrupt ” to invoke OS for an action. MIPS syscall instruction provides many 
+   services. It may be to print a number or to terminate a program. Has about 39 MIPS syscall 
+   services.
+
+
