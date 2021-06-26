@@ -1,0 +1,113 @@
+Activity 1
+4. A machine instruction contains 32 bits.
+5. There ae thre types of instructions: I, R, and J format. For R: add sub. For J: j jal. 
+   For I: beq bne
+6. a) This is an I format instruction, it has 4 fields named: opcode, rs, rt, and immediate
+   b) The value of the opcode in hex for the function is: 0x08. Rs is register $zero, the 
+   address of this in hex is 0x0. Rt is register $s0, which is 0x10. The value of the
+   immediate in hex is 0x19.
+   c) 0010 0000 0001 0000 0000 0000 0001 1001
+      0x20100019
+7. a) The machine code at address 0x00400010 is 0x0230402a in binary this is 
+      0000 0010 0011 0000 0100 0000 00 10 1010
+   b) From the code this is an R format instruction as it starts with a 0. The fields are 
+      opcode, rs, rt, rd, shamt, funct
+   c) According to the binary, each field has the followinf hex values opcode: 0x00, rs: 0x11
+      rt: 0x10 rd: 0x08 shamt: 0x0 function: 0x2a
+   d) This operation is slt, we know this based on the opcode and function code.Mapping of 
+      registers is rs: $17 or $s1, rt: $16 or $s0, rd: $8 or $t0
+   e) slt $t0, $s1, $s0, this matches MARS 
+8. a) This is an i format instruction. 
+   b) In hex, opcode: 0x5, rs: 0x8, rt: 0x0, 0x1
+   c) Name of target label is: LESS address is 0x0040001c
+   d) The return address is not put in the immediate field because there isnt enough bits to 
+      represent it.   
+   e) The immediate field is the amount of lines between the line after the bne and the label. 
+      The value in this case is 0x01
+   f) In binary and hex the instruction is: 
+      0001 0101 0000 0000 0000 0000 0000 0001
+      0x15000001
+9. a) This instruction is j format.It has 2 fields. 
+   b) Opcode in hex: 0x2
+   c) Instruction jumps to label GREQ at address 0x00400030
+   d) The address field of the instruction only has 26 bits. We can squeeze the address here 
+      because the last 2 bits are always zero and hence do not need to be stored, the remaining 
+      4 bits are compied from the address of the first 4 digits of the j instruction address. 
+      The address is 00000100000000000000001100 
+   e) The instruction in hex and binary is:
+      0000 1000 0001 0000 0000 0000 0000 1100 
+      0x0810000C
+ 
+
+Assingment
+1. Line 7: addi $s0, $zero, -15
+   I format:
+   opcode: 00 1000
+   rs: $0 = 00000
+   rt: $s0 - $16 = 10000
+   immediate: 0000 0000 0000 1111
+              1111 1111 1111 0000 + 1 = 1111 1111 1111 0001
+   code: 0010 0000 0001 0000 1111 1111 1111 0001 
+         0x2010FFF1
+   
+   Back to mips: 0010 0000 0001 0000 1111 1111 1111 0001
+   I format
+   opcode: 001000 = 8 = addi
+   rs: 00000 = $0
+   rt: 10000 = $16 = $s0
+   immediate: 1111 1111 1111 0001 = 0000 0000 0000 1110 + 1 = 0000 0000 0000 1111 = -15
+   instruction: addi $s0, $0, -15
+
+2. Line 14: slt $t0, $s0, $s1
+   R format
+   opcode: 00 0000
+   rs: $s0 - $16 = 10000
+   rt: $s1 - $17 = 10001
+   rd: $t0 - $8 = 01000
+   shamt = 00000
+   funct: 10 1010
+   code: 0000 0010 0001 0001 0100 0000 0010 1010
+         0x0211402A
+   
+   Back to mips: 0000 0010 0001 0001 0100 0000 0010 1010
+   R format
+   opcode: 000000 = 0 = function
+   rs: 10000 = $16 = $s0
+   rt: 10001 = $17 = $s1
+   rd: 01000 = $8 = $t0
+   shamt = 00000
+   function = 101010 = slt
+   instruction: slt $t0, $s0, $s1
+
+3. Line 17: beq $t0, $zero, LEEQ 
+   I format
+   opcode: 000100
+   rs: $t0 = $8 = 01000
+   rt: $zero = $0 = 00000
+   immediate: 6 (branch 6 lines away) 0000000000000110
+   code: 0001 0001 0000 0000 0000 0000 0000 0110
+         0x11000006
+
+   Back to mips: 0001 0001 0000 0000 0000 0000 0000 0110
+   I format
+   opcode: 000100 = 4 = beq 
+   rs: 01000 = $8 = $t0
+   rt: 00000 = $0 = $zero
+   immediate = 0000000000000110 = 6 = LEEQ (since its 6 lines away)
+   instruction: beq $t0, $zero, LEEQ
+
+4. Line 20: j GRT, Addres of GRT: 0x0040001c= 0000 0000 0100 0000 0000 0000 0001 1100
+   Address of line 20: 0x00400018 = 0000 0000 0100 0000 0000 0000 0001 1000
+   J format
+   opcode: 000010
+   address: 00000100000000000000000111
+   code: 0000 1000 0001 0000 0000 0000 0000 0111
+         0x08100007
+
+   Back to mips: 0000 1000 0001 0000 0000 0000 0000 0111
+   opcode: 000010 = 2 = j
+   J format
+   address = 0000 00 0001 0000 0000 0000 0000 0111 00 = 0000 0000 0100 0000 0000 0000 0001 1100
+   = 0x0040001c
+   instruction: j 0x0040001c = j GRT
+   

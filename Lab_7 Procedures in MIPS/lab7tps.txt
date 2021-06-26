@@ -1,0 +1,28 @@
+Activity 1
+1. A procedure is a set of code that performs a specific task. A function can be called by 
+   name and can return a value. A method is very similar to a function except the method are
+   associated to a class or object. 
+2. N/A
+3. Created proc1.c
+4. j SUM jumps to line 20, which then adds into register $v0 the values stored at $a0 and $a1. 
+5. j should not be used as if the function is called multiple times in main it would always 
+   return to the same spot in the code.
+6. The return address is supposed to be saved in line 11, but instead zero is saved into 
+   the return address, this doesnt make sense as zero is not the correct pointer to the 
+   current line of code. 
+7. The program terminates due to an invalid program counter. 
+8. Sum should return to address: 0x00400020
+9. A different memory address was saved. 
+10.The new address is 0x00400028 and the output is 15. 
+11.jal should be used to automatically save the return address. 
+12.Edited code to use jal.
+
+Activity 2
+1. The output will be 38. 
+2. The mips code has procedures for all the c functions in the program. 
+3. SUM knows where to return since jal was used, saving the address, thus address however is 
+   overwritten when jal SUB runs, thus the first return address must be temporarily saved. 
+4. Instead of storing the address in a temporary register, it can be stored in memory and
+   loaded again when needed.
+5. The code at line 25 is a oroblem as $s0 value will be overwritten, to prevent this save 
+   $s0's value into memory first. 
